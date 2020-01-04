@@ -1,0 +1,1 @@
+print(type(divmod(9,5)))
