@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Day07_05_IF {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner s = new Scanner (System.in);
+		
+		int price, money;
+		System.out.print("물건값 : ");
+		price = s.nextInt();
+		System.out.println("지불 금액 : 100000원");
+		money = 100000;
+		int R;
+		R = money - price;
+		
+		int fiftyTh=0, tenTh=0, fiveTh=0, th=0, fiveHd=0, hd=0;
+		
+		if (R>=50000) {
+			fiftyTh = R / 50000;
+			R = R % 50000;
+		}
+		
+		if (R>=10000) {
+			tenTh = R / 10000;
+			R = R % 10000;
+		}
+		
+		if (R>=5000) {
+			fiveTh = R / 5000;
+			R = R % 5000;
+		}
+		
+		if (R>=1000) {
+			th = R / 1000;
+			R = R % 1000;
+		}
+		
+		if (R>=500) {
+			fiveHd = R / 500;
+			R = R % 500;
+		}
+		
+		if (R>=100) {
+			hd = R / 100;
+		}
+		
+		System.out.println("거스름돈 : " + (money - price) + "원");
+		System.out.printf("5만원 : %d장\n1만원 : %d장\n5천원 : %d장\n1천원 : %d장\n5백원 : %d개\n1백원 : %d개", fiftyTh, tenTh, fiveTh, th, fiveHd, hd);
+		
+		s.close();
+			
+
+	}
+
+}

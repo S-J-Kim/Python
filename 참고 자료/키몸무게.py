@@ -1,0 +1,5 @@
+height = int(input("키 입력: "))
+#height = round(float(height),0)
+weight = input("몸무게 입력: ")
+weight = float(weight)
+print(height+weight)

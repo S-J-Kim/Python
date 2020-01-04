@@ -1,0 +1,8 @@
+import datetime     
+now = datetime.datetime.now()
+time = now.hour
+///
+if 0<= time < 12:
+    print('오전')
+else :
+    print('오후')

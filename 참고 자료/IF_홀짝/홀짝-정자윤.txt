@@ -1,0 +1,19 @@
+﻿#나머지로 홀짝 알아볼때
+print("숫자를 입력해주세요")
+n=int(input())
+if n%2==0 :
+    print("{}은 짝수입니다.".format(n))
+else:
+    print("{}은 홀수입니다.".format(n))
+
+#끝자리로 홀짝 알아볼때
+print("숫자를 입력해주세요")
+x=input()
+p=int(x[-1:])
+q=[2,4,6,8,0]
+if p in q:
+    print('{}은 짝수입니다.' .format(x))
+else:
+    print("{}은 홀수입니다." .format(x))
+
+input('엔터를 치고 나가주세요')

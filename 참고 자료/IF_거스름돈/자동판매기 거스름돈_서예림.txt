@@ -1,0 +1,13 @@
+print('1.우유:1500 원, 2.감자:2000 원')
+milk = int(1)
+potato = int(2)
+a = int(input('투입한 금액(원)'))
+b = int(input('원하는 물건의 금액을 입력하세요'))
+c = a-b
+print('거스름돈은 ', c, '원 입니다')
+first = c // 1000
+second = (c-(first*1000)) // 500
+third =  (c-(first*1000)) // 100
+print('1000원 지폐 : ',first)
+print('500원 동전 : ',second)
+print('100원 동전 : ',third)
