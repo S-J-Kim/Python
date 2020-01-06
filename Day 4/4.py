@@ -5,7 +5,7 @@ import time
 from selenium import webdriver
 
 # Chrome WebDriver를 이용해 Chrome을 실행한다.
-driver = webdriver.Chrome("chromedriver.exe")
+driver = webdriver.Chrome("D:\PY\Python\Day 4\chromedriver.exe")
 
 # www.google.com으로 이동한다.
 driver.get("https://www.youtube.com")
