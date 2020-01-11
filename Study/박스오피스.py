@@ -41,5 +41,5 @@ grade = soup.select("dd > span.point_num")
 
 chart = [movie_name[i].text for i in range(len(movie_name))]
 
-driver = webdriver.Chrome("D:\PY\Python\Day 4\chromedriver.exe")
+driver = webdriver.Chrome("drv.exe")
 WatchMovieTrailer(chart)
