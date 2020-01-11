@@ -6,7 +6,7 @@ import datetime
 from selenium import webdriver
 
 # Chrome WebDriver를 이용해 Chrome을 실행한다.
-driver = webdriver.Chrome("D:\PY\Python\Day 4\chromedriver.exe")
+driver = webdriver.Chrome("Study\drv.exe")
 
 # www.youtube.com으로 이동한다.
 driver.get("https://www.youtube.com")
