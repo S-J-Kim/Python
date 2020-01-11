@@ -18,6 +18,8 @@ def PlayTrailerOnYoutube(name_of_movie):
 
     continue_link = driver.find_elements_by_partial_link_text("예고편")
     continue_link[0].click()
+    time.sleep(5)
+    
 
 def WatchMovieTrailer(movie_list):
     print("========== 박스오피스 현황 ==========")
