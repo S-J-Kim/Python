@@ -1,0 +1,12 @@
+파이썬 3대장
+
+pandas -> 데이터분석
+matplotlib -> 통계
+numpy
+
+csv와 xls의 차이
+csv는 메모장으로 열 수 있음
+필드간 구분을 ','로 구분함(comma)
+
+'\t'로 구분하면 tsv라고 함
+
