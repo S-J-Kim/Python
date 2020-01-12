@@ -3,9 +3,13 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+options.add_argument('window-size=1920x1080')
+options.add_argument('disable-gpu')
 
 path='D:\PY\Python\Study\drv.exe'
-driver = webdriver.Chrome(path)
+driver = webdriver.Chrome(path, options=options)
 driver.get("http://www.hongik.ac.kr/login.do?Refer=https://cn.hongik.ac.kr/")
 
 identifier = 'B611033'
@@ -37,4 +41,6 @@ df = pd.DataFrame(noti_data, columns=noti_data.keys())
 excel_writer = pd.ExcelWriter("클래스넷 공지목록.xlsx", engine='xlsxwriter')
 df.to_excel(excel_writer, index=False)
 excel_writer.save()
+
+print("Complete!")
 
