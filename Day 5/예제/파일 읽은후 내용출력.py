@@ -1,5 +1,3 @@
-
-
 import sys
 
 print("Output : Baby_Shark.txt")
