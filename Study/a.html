@@ -1,0 +1,61 @@
+'<html>
+
+<head>\n\t<title>학생 클래스넷</title>\n\t
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">\n\t\n\t
+    <script
+        type="text/javascript">\n\t\tvar s_browser = navigator.userAgent.toLowerCase(); \n\t\t\n\t\tif(s_browser.indexOf(\'msie\') >= 0 && parseInt(s_browser.split(\'msie\')[1]) < 9)\n\t\t{\n\t\t\talert("브라우저가 Internet Explorer 9 미만입니다.\\n보안 문제로 인하여 클래스넷 접속이 불가능합니다.");\n\t\t\tdocument.location.replace("unavailable.jsp");\n\t\t}\n\t</script>
+    \n\t
+    <link rel="shortcut icon" href="favicon.ico">\n\t
+    <link rel="stylesheet" href="css/reset.css">\n\t
+    <link rel="stylesheet" href="css/common.css">\n\t
+    <link rel="stylesheet" href="css/UI.css">\n\t<style type="text/css">
+        \n\t\t.pop-layer {
+            \n\t\t\tdisplay: none;
+            \n\t\t\tposition: absolute;
+            \n\t\t\tbackground-color: #fff;
+            \n\t\t\tborder: 4px solid #3571B5;
+            \n\t\t\tz-index: 10;
+            \n\t\t
+        }
+
+        \n\t\t\n\t\t.pop-layer .popbody {
+            \n\t\t\tpadding: 10px;
+            \n\t\t\twidth: 100%;
+            \n\t\t\theight: 100%;
+            \n\t\t
+        }
+
+        \n\t\t\n\t\t.pop-layer .title span {
+            \n\t\t\twidth: 100%;
+            \n\t\t\tfont-size: 16px;
+            \n\t\t\tbackground-color: #C2C2C2;
+            \n\t\t\tcolor: black;
+            \n\t\t\tfont-weight: bold;
+            \n\t\t\tpadding: 4px 0px 4px 8px;
+            \n\t\t\tdisplay: inline-block;
+            \n\t\t
+        }
+
+        \n\t\t\n\t\t.pop-layer .title input[type=button] {
+            \n\t\t\tposition: absolute;
+            \n\t\t\tright: 0px;
+            \n\t\t\tfont-size: 14px;
+            \n\t\t\tfont-weight: bold;
+            \n\t\t\tbackground-color: #3571B5;
+            \n\t\t\tcolor: white;
+            \n\t\t\tpadding: 4px;
+            \n\t\t\tborder: none;
+            \n\t\t
+        }
+
+        \n\t\t\n\t
+    </style>\n\t
+    <script src="js/jquery-3.1.0.min.js"></script>\n\t\n\t\n\t
+    <script
+        type="text/javascript">\t\n\t\n\t\tfunction getCookie(seq) \n\t\t{ \n\t\t\tvar wcname = "popup_" + seq + "="; \n\t\t\tvar wcstart, wcend, end; \n\t\t\tvar i = 0; \n\t\t\twhile(i <= document.cookie.length) { \n\t\t\t\twcstart = i; \n\t\t\t\twcend   = (i + wcname.length); \n\t\t\t\tif(document.cookie.substring(wcstart, wcend) == wcname) { \n\t\t\t\t\tif((end = document.cookie.indexOf(\';\', wcend)) == -1)                           \n\t\t\t\t\tend = document.cookie.length;                    \n\t\t\t\t\treturn document.cookie.substring(wcend, end);            \n\t\t\t\t}           \n\t\t\t\ti = document.cookie.indexOf(\'\', i) + 1;            \n\t\t\t  \n\t\t\t\tif(i == 0)                    \n\t\t\t\tbreak;    \n\t\t\t}    \n\t\t\t\n\t\t\treturn \'\';\n\t\t}\n\t\t\n\t\tfunction setCookie(seq) {        \n\t\t\tvar today = new Date();\n\t\t\ttoday.setDate(today.getDate()+1);\n\t\t\ttoday.setHours(0);\n\t\t\ttoday.setMinutes(0);\n\t\t\ttoday.setSeconds(0);\n\t\t    document.cookie = "popup_" + seq + "=" + escape("no_open") + "; path=/; expires=" + today.toGMTString() + ";";\n\t\t}\n\t\t\n\t\t$(document).ready(function() {\n\t\t\t\n\t\t\t$(".pop-layer").fadeIn();\n\t\t\t\n\t\t\t$("input[name=no_show]").click(function() {\n\t\t\t\tsetCookie($(this).parents(".pop-layer").prop("id"));\n\t\t\t\t$(this).parents(".pop-layer").fadeOut();\n\t\t\t});\n\t\t\t\n\t\t\t$("input[name=btn_close]").click(function() {\n\t\t\t\t$(this).parents(".pop-layer").fadeOut();\n\t\t\t});\n\t\t\t\n\t\t\t$(".popbody").find("input[type=submit]").click(function() {\n\t\t\t\t\n\t\t\t\tif($(this).parents("form").prop("target") == "_blank")\n\t\t\t\t{\n\t\t\t\t\t$(this).parents(".pop-layer").fadeOut();\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\t$(".pop-layer").fadeOut();\n\t\t\t\t}\n\t\t\t});\n\t\t\t\n\t\t\t$(".popbody").find("a").click(function() {\n\t\t\t\t$(this).next("form").submit();\n\t\t\t\t$(".pop-layer").fadeOut();\n\t\t\t});\n\t\t});\n\t</script>
+    \t\t\t\t\n</head>\n
+
+<body>\n\n\t<iframe style="width:100%; height:100%; border:none;" marginheight="0" marginwidth="0"
+        src="frame.jsp"></iframe>\n \t\t\n\n</body>
+
+</html>'

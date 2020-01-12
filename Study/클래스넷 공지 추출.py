@@ -1,12 +1,11 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+import requests
+import pandas as pd
 
-opt = Options()
-opt.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko")
 
 path='D:\PY\Python\Study\drv.exe'
-driver = webdriver.Chrome(chrome_options=opt, executable_path=path)
+driver = webdriver.Chrome(path)
 driver.get("http://www.hongik.ac.kr/login.do?Refer=https://cn.hongik.ac.kr/")
 
 identifier = 'B611033'
@@ -22,6 +21,20 @@ my_pw.send_keys(password)
 
 driver.find_element_by_xpath('\
     /html/body/div/div[2]/div[3]/div/div/div/div[2]/div/div[2]/div[1]/div[2]/div/table/tbody/tr/td[2]/div/form/div/div/div[2]/button' ).click()
+    
+driver.get("https://cn.hongik.ac.kr/stud/include/main.jsp")
+notices = driver.find_elements_by_tag_name("#notice > ul > li > a")
+date = driver.find_elements_by_tag_name("#notice > ul > li > span")
 
-noti = driver.find_elements_by_class_name("no_loading")
-print(noti)
+
+for i in range(len(notices)):
+    notices[i] = notices[i].text
+    date[i] = date[i].text
+
+noti_data = {'notice': notices, 'date': date}
+df = pd.DataFrame(noti_data, columns=noti_data.keys())
+
+excel_writer = pd.ExcelWriter("클래스넷 공지목록.xlsx", engine='xlsxwriter')
+df.to_excel(excel_writer, index=False)
+excel_writer.save()
+
