@@ -13,7 +13,7 @@ driver = webdriver.Chrome(path, options=options)
 driver.get("http://www.hongik.ac.kr/login.do?Refer=https://cn.hongik.ac.kr/")
 
 identifier = 'B611033'
-password = '9712qwer##'
+password = '        '  # CLASSIFIED!
 
 driver.implicitly_wait(5)
 
