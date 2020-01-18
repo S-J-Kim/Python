@@ -1,5 +1,6 @@
 파이썬에서 PDF 파일 작업
 
+모듈 설치
 1. PyPDF2
 2. textract
 3. nltk
