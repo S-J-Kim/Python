@@ -5,8 +5,12 @@ import time
 import datetime
 from selenium import webdriver
 
+options = webdriver.ChromeOptions()
+options.add_argument('disable-infobars')
+options.add_argument(r'--user-data-dir=C:\Users\Home\AppData\Local\Google\Chrome\User Data')
+
 # Chrome WebDriver를 이용해 Chrome을 실행한다.
-driver = webdriver.Chrome("Study\drv.exe")
+driver = webdriver.Chrome("Study\drv.exe", options=options)
 
 # www.youtube.com으로 이동한다.
 driver.get("https://www.youtube.com")
