@@ -1,28 +1,11 @@
-import pprint
+import MySQLdb
 import requests
 from bs4 import BeautifulSoup
-
-
-class Song:
-    def __init__(self, sg, at, ab):
-        self.sg = sg
-        self.at = at
-        self.ab = ab
-        
-    def info(self):
-        print(f'''
-        ====================================
-        {self.sg}
-        {self.at}
-        {self.ab}
-        ====================================
-        ''')
-        
 
 # 멜론은 user-agent를 변경해서 써야 parsing이 가능
 headers = {'User-Agent': 'Mozilla/5.0 (X11; CrOS i686 2268.111.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57'}
 
-url = r"https://www.melon.com/chart/index.htm"
+url = "https://www.melon.com/chart/index.htm"
 res = requests.get(url, headers=headers).text
 soup = BeautifulSoup(res, "lxml")
 
@@ -42,10 +25,14 @@ for i in range(len(song_name)):
 for i in range(len(album_name)):
     album_name[i] = album_name[i].text
 
-chart = []
+for i in range(len(artist_name)):
+    artist_name[i] = ', '.join(artist_name[i])
+
+con = MySQLdb.connect(host='localhost', port=3306, db='mydb', user='root', passwd='root', use_unicode=True, charset='utf8')
+c = con.cursor()
 
 for i in range(len(song_name)):
-    chart.append(Song(song_name[i], artist_name[i], album_name[i]))
+    data = [i, song_name[i], artist_name[i], album_name[i]]
+    c.execute("""INSERT INTO chart200121 VALUES (%s, %s, %s, %s);""", data)
 
-
-
+con.commit()
