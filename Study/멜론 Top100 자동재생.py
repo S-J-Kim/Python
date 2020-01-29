@@ -26,7 +26,7 @@ time.sleep(1)
 d = str(datetime.datetime.now().day)  
 m = str(datetime.datetime.now().month)
 query = m + '월' + d + '일 멜론'
-query2 = m + '월' + d
+query2 = m + '월' + d + '일'
 
 '''
 # 검색창에 "{month}월 {day}일 멜론"을 입력한다.

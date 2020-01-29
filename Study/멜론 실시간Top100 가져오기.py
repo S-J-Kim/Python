@@ -28,11 +28,14 @@ for i in range(len(album_name)):
 for i in range(len(artist_name)):
     artist_name[i] = ', '.join(artist_name[i])
 
-con = MySQLdb.connect(host='localhost', port=3306, db='mydb', user='root', passwd='root', use_unicode=True, charset='utf8')
-c = con.cursor()
+for i in range(len(album_name)):
+    print(f'{song_name[i]} / {artist_name[i]} / {album_name[i]}')
 
-for i in range(len(song_name)):
-    data = [i, song_name[i], artist_name[i], album_name[i]]
-    c.execute("""INSERT INTO chart200121 VALUES (%s, %s, %s, %s);""", data)
+# con = MySQLdb.connect(host='localhost', port=3306, db='mydb', user='root', passwd='root', use_unicode=True, charset='utf8')
+# c = con.cursor()
 
-con.commit()
+# for i in range(len(song_name)):
+#     data = [i, song_name[i], artist_name[i], album_name[i]]
+#     c.execute("""INSERT INTO chart200122 VALUES (%s, %s, %s, %s);""", data)
+
+# con.commit()
