@@ -4,17 +4,19 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 def PlayTrailerOnYoutube(name_of_movie):
+    driver = webdriver.Chrome("Study\drv.exe")
+    query = "https://www.youtube.com/results?search_query=" + name_of_movie + " 예고편"
     
-    
-    driver.get('https://www.youtube.com')
+    driver.get(query)
     time.sleep(1)
-
+    '''
     input_element = driver.find_element_by_name("search_query")
     time.sleep(1)
 
     input_element.send_keys(name_of_movie + " 예고편")
     input_element.submit()
     time.sleep(1)
+    '''
 
     continue_link = driver.find_elements_by_partial_link_text("예고편")
     continue_link[0].click()
@@ -41,5 +43,4 @@ grade = soup.select("dd > span.point_num")
 
 chart = [movie_name[i].text for i in range(len(movie_name))]
 
-#driver = webdriver.Chrome("drv.exe")
 WatchMovieTrailer(chart)
