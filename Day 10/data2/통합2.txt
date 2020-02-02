@@ -1,0 +1,34 @@
+
+election_result = pd.DataFrame({'광역시도':sido_name_list, '시군':sigun_name_list, 'pop':pop, 
+                                'moon':moon, 'hong':hong, 'ahn':ahn})
+
+ID = []
+
+for n in election_result.index:
+    if (election_result['광역시도'][n][-1] == '시') & (election_result['광역시도'][n] != '세종특별자치시'):
+        if len(election_result['시군'][n]) == 2:
+            ID.append(election_result['광역시도'][n][:2] + ' ' + election_result['시군'][n])
+        else:
+            ID.append(election_result['광역시도'][n][:2] + ' ' + election_result['시군'][n][:-1])
+            
+    elif (election_result['광역시도'][n][-1] == '도'):
+        tmp = election_result['시군'][n]
+        
+        if tmp[0] not in ['시','군']:
+            tmp2 = re.split('시|군', tmp)
+        else:
+            tmp2 = [tmp[:-1], '']
+        
+        if len(tmp2[1]) == 2:
+            tmp3 = tmp2[0] + ' ' + tmp2[1]
+        elif len(tmp2[1]) >= 3:
+            tmp3 = tmp2[0] + ' ' + tmp2[1][:-1]
+        else:
+            tmp3 = tmp2[0]
+            
+        ID.append(tmp3)
+        
+    else:
+        ID.append('세종')
+
+election_result['ID'] = ID

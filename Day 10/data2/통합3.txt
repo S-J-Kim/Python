@@ -1,0 +1,27 @@
+
+election_result.loc[125, 'ID'] = '고성(강원)'
+election_result.loc[233, 'ID'] = '고성(경남)'
+
+election_result.loc[228, 'ID'] = '창원 합포'
+election_result.loc[229, 'ID'] = '창원 회원'
+
+ahn_tmp = election_result.loc[85, 'ahn']/3
+hong_tmp = election_result.loc[85, 'hong']/3
+moon_tmp = election_result.loc[85, 'moon']/3
+pop_tmp = election_result.loc[85, 'pop']/3
+
+rate_moon_tmp = election_result.loc[85, 'rate_moon']
+rate_hong_tmp = election_result.loc[85, 'rate_hong']
+rate_ahn_tmp = election_result.loc[85, 'rate_ahn']
+
+election_result.loc[250] = [ahn_tmp, hong_tmp, moon_tmp, pop_tmp, 
+                           '경기도', '부천시', '부천 소사', 
+                           rate_moon_tmp, rate_hong_tmp, rate_ahn_tmp]
+election_result.loc[251] = [ahn_tmp, hong_tmp, moon_tmp, pop_tmp, 
+                           '경기도', '부천시', '부천 오정', 
+                           rate_moon_tmp, rate_hong_tmp, rate_ahn_tmp]
+election_result.loc[252] = [ahn_tmp, hong_tmp, moon_tmp, pop_tmp, 
+                           '경기도', '부천시', '부천 원미', 
+                           rate_moon_tmp, rate_hong_tmp, rate_ahn_tmp]
+
+election_result.drop([85], inplace=True)

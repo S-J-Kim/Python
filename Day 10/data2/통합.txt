@@ -1,0 +1,85 @@
+
+sido_name_list = []
+sigun_name_list = []
+pop = []
+moon = []
+hong = []
+ahn = []
+
+sido_name_values = ['서울특별시','부산광역시','대구광역시','인천광역시',
+                    '광주광역시','대전광역시','울산광역시','세종특별자치시',
+                    '경기도','강원도','충청북도','충청남도','전라북도','전라남도',
+                    '경상북도','경상남도','제주특별자치도']
+# sido_name_values = ['경기도','강원도']
+for sido_value in sido_name_values:
+    element = driver.find_element_by_id("cityCode")
+    element.send_keys(sido_value)
+    
+    time.sleep(1)
+    
+    element = driver.find_element_by_id("searchBtn")
+    element.send_keys(Keys.RETURN)
+    
+    # 현재 페이지 html 소스를 가져옴
+    html = driver.page_source
+    
+    # BeautifulSoup은 html 코드를 Python이 이해하는 객체 구조로 변환하는 역할을 한다.
+    soup = BeautifulSoup(html, "lxml")
+    
+    continue_count = 3
+    count = 0
+    # 페이지 내에 간접 선거 테이블을 포함하여 테이블이 두개 존재하는 경우가 있음.
+    # 그래서 table01 id를 지정하여 테이블 선택 후 tr 검색
+    tr_all = soup.find("table", {"id": "table01"}).find_all('tr')
+    for tr in tr_all:
+        if count < continue_count:
+            count += 1
+            continue
+            
+        td_all = tr.find_all('td')
+        
+        column_pos = 0
+        for td in td_all:
+            # td 태그 안에 br 태그가 포함되어 있으므로 제거
+            for br in td.find_all('br'):
+                br.extract()
+                
+            # td 태그의 내용 추출
+            td_string = str(td)
+            td_string = td_string.replace("</td>", "")
+            pos = td_string.index(">")
+            td_string = td_string[pos + 1 : len(td_string)]
+            if column_pos == 0:
+                sido_name_list.append(sido_value)
+                sigun_name_list.append(td_string)
+                column_pos += 1
+                continue
+            
+            if column_pos < 2:
+                column_pos += 1
+                continue
+            
+            if "(" in td_string:
+                pos = td_string.index("(")
+                td_string = td_string[:pos]
+            
+            # float으로 casting 하기 위해 쉼표 제거
+            if "," in td_string:
+                value = float(td_string.replace(',', ''))
+            
+            if column_pos == 2:
+                pop.append(value)
+                column_pos += 1
+            elif column_pos == 3:
+                moon.append(value)
+                column_pos += 1
+            elif column_pos == 4:
+                hong.append(value)
+                column_pos += 1
+            elif column_pos == 5:
+                ahn.append(value)
+                column_pos += 1
+            else:
+                break
+
+    time.sleep(1)
