@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>개발 도구 &#8212; Python 3.8.1 문서</title>
+    <link rel="stylesheet" href="../_static/pydoctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Python 3.8.1 문서에서 찾기"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="이 문서 정보" href="../about.html" />
+    <link rel="index" title="색인" href="../genindex.html" />
+    <link rel="search" title="검색" href="../search.html" />
+    <link rel="copyright" title="저작권" href="../copyright.html" />
+    <link rel="next" title="typing — Support for type hints" href="typing.html" />
+    <link rel="prev" title="기타 그래픽 사용자 인터페이스 패키지" href="othergui.html" />
+    <link rel="canonical" href="https://docs.python.org/3/library/development.html" />
+    
+      
+      <script type="text/javascript" src="../_static/switchers.js"></script>
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+     
+
+
+  </head><body>
+  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>탐색</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="전체 색인"
+             accesskey="I">색인</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 모듈 목록"
+             >모듈</a> |</li>
+        <li class="right" >
+          <a href="typing.html" title="typing — Support for type hints"
+             accesskey="N">다음</a> |</li>
+        <li class="right" >
+          <a href="othergui.html" title="기타 그래픽 사용자 인터페이스 패키지"
+             accesskey="P">이전</a> |</li>
+
+    <li><img src="../_static/py.png" alt=""
+             style="vertical-align: middle; margin-top: -1px"/></li>
+    <li><a href="https://www.python.org/">Python</a> &#187;</li>
+    
+
+    <li>
+      <span class="language_switcher_placeholder">ko</span>
+      <span class="version_switcher_placeholder">3.8.1</span>
+      <a href="../index.html">설명서 </a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">파이썬 표준 라이브러리</a> &#187;</li>
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="빠른 검색" type="text" name="q" />
+          <input type="submit" value="이동" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="development-tools">
+<span id="development"></span><h1>개발 도구<a class="headerlink" href="#development-tools" title="제목 주소">¶</a></h1>
+<p>이 장에서 설명하는 모듈은 소프트웨어를 작성하는 것을 돕습니다. 예를 들어, <a class="reference internal" href="pydoc.html#module-pydoc" title="pydoc: Documentation generator and online help system."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pydoc</span></code></a> 모듈은 모듈을 가져와서 모듈의 내용을 기반으로 설명서를 만듭니다. <a class="reference internal" href="doctest.html#module-doctest" title="doctest: Test pieces of code within docstrings."><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code></a> 와 <a class="reference internal" href="unittest.html#module-unittest" title="unittest: Unit testing framework for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code></a> 모듈에는 예상 출력이 만들어지는지 코드를 자동으로 실행하고 확인하는 단위 테스트를 작성하기 위한 프레임워크가 포함되어 있습니다. <strong class="program">2to3</strong>는 파이썬 2.x 소스 코드를 유효한 파이썬 3.x 코드로 변환할 수 있습니다.</p>
+<p>이 장에서 설명하는 모듈 목록은 다음과 같습니다:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code> — Support for type hints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#type-aliases">Type aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#newtype">NewType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#callable">Callable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#generics">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#user-defined-generic-types">User-defined generic types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#the-any-type">The <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code> type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#nominal-vs-structural-subtyping">Nominal vs structural subtyping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#classes-functions-and-decorators">Classes, functions, and decorators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydoc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pydoc</span></code> — 설명서 생성과 온라인 도움말 시스템</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code> — 대화형 파이썬 예제 테스트</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#simple-usage-checking-examples-in-docstrings">간단한 사용법: 독스트링에 있는 예제 확인하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#simple-usage-checking-examples-in-a-text-file">간단한 사용법: 텍스트 파일에 있는 예제 확인하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#how-it-works">작동 방법</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#which-docstrings-are-examined">어떤 독스트링을 검사합니까?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#how-are-docstring-examples-recognized">독스트링 예제는 어떻게 인식됩니까?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#what-s-the-execution-context">실행 컨텍스트란 무엇입니까?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#what-about-exceptions">예외는 어떻게 됩니까?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#option-flags">옵션 플래그</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#directives">지시자</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#warnings">경고</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#basic-api">기본 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#unittest-api">Unittest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#advanced-api">고급 API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#doctest-objects">DocTest 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#example-objects">Example 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#doctestfinder-objects">DocTestFinder 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#doctestparser-objects">DocTestParser 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#doctestrunner-objects">DocTestRunner 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doctest.html#outputchecker-objects">OutputChecker 객체</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#debugging">디버깅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctest.html#soapbox">맺음말</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unittest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> — 단위 테스트 프레임워크</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#basic-example">기본 예시</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#command-line-interface">명령행 인터페이스</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.html#command-line-options">명령행 옵션</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#test-discovery">테스트 탐색(Discovery)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#organizing-test-code">테스트 코드 구조 잡기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#re-using-old-test-code">이전의 테스트 코드를 다시 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#skipping-tests-and-expected-failures">테스트 건너뛰기와 예상된 실패</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#distinguishing-test-iterations-using-subtests">부분 테스트(subtest)를 사용하여 테스트 반복 구별 짖기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#classes-and-functions">클래스와 함수</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.html#test-cases">테스트 케이스</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unittest.html#deprecated-aliases">폐지된 에일리어스</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.html#grouping-tests">테스트 분류</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.html#loading-and-running-tests">테스트를 로드하고 실행하기</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unittest.html#load-tests-protocol">load_tests 프로토콜</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#class-and-module-fixtures">클래스와 모듈 픽스쳐</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.html#setupclass-and-teardownclass">setUpClass 와 tearDownClass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.html#setupmodule-and-teardownmodule">setUpModule 과 tearDownModule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html#signal-handling">시그널 처리하기</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unittest.mock.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> — mock object library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock.html#quick-guide">Quick Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock.html#the-mock-class">The Mock Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#calling">Calling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#deleting-attributes">Deleting Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#mock-names-and-the-name-attribute">Mock names and the name attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#attaching-mocks-as-attributes">Attaching Mocks as Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock.html#the-patchers">The patchers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patch">patch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patch-object">patch.object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patch-dict">patch.dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patch-multiple">patch.multiple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patch-methods-start-and-stop">patch methods: start and stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patch-builtins">patch builtins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#test-prefix">TEST_PREFIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#nesting-patch-decorators">Nesting Patch Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#where-to-patch">Where to patch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#patching-descriptors-and-proxy-objects">Patching Descriptors and Proxy Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock.html#magicmock-and-magic-method-support">MagicMock and magic method support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#mocking-magic-methods">Mocking Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#magic-mock">Magic Mock</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock.html#helpers">Helpers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#sentinel">sentinel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#default">DEFAULT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#call">call</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#create-autospec">create_autospec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#any">ANY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#filter-dir">FILTER_DIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#mock-open">mock_open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#autospeccing">Autospeccing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock.html#sealing-mocks">Sealing mocks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unittest.mock-examples.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> — getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock-examples.html#using-mock">Using Mock</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mock-patching-methods">Mock Patching Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mock-for-method-calls-on-an-object">Mock for Method Calls on an Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-classes">Mocking Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#naming-your-mocks">Naming your mocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#tracking-all-calls">Tracking all Calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#setting-return-values-and-attributes">Setting Return Values and Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#raising-exceptions-with-mocks">Raising exceptions with mocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#side-effect-functions-and-iterables">Side effect functions and iterables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-asynchronous-iterators">Mocking asynchronous iterators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-asynchronous-context-manager">Mocking asynchronous context manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#creating-a-mock-from-an-existing-object">Creating a Mock from an Existing Object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock-examples.html#patch-decorators">Patch Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.mock-examples.html#further-examples">Further Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-chained-calls">Mocking chained calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#partial-mocking">Partial mocking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-a-generator-method">Mocking a Generator Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#applying-the-same-patch-to-every-test-method">Applying the same patch to every test method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-unbound-methods">Mocking Unbound Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#checking-multiple-calls-with-mock">Checking multiple calls with mock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#coping-with-mutable-arguments">Coping with mutable arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#nesting-patches">Nesting Patches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-a-dictionary-with-magicmock">Mocking a dictionary with MagicMock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mock-subclasses-and-their-attributes">Mock subclasses and their attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#mocking-imports-with-patch-dict">Mocking imports with patch.dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#tracking-order-of-calls-and-less-verbose-call-assertions">Tracking order of calls and less verbose call assertions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest.mock-examples.html#more-complex-argument-matching">More complex argument matching</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2to3.html">2to3 - 파이썬 2에서 파이썬 3으로 자동 코드 변환</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2to3.html#using-2to3">2to3 사용법</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2to3.html#fixers">변환자 목록</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2to3.html#module-lib2to3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib2to3</span></code> - 2to3 라이브러리</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code> — Regression tests package for Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="test.html#writing-unit-tests-for-the-test-package">Writing Unit Tests for the <code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code> package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#running-tests-using-the-command-line-interface">Running tests using the command-line interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html#module-test.support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support</span></code> — Utilities for the Python test suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html#module-test.support.script_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.script_helper</span></code> — Utilities for the Python execution tests</a></li>
+</ul>
+</div>
+<p>파이썬 개발 모드도 보십시오: <a class="reference internal" href="../using/cmdline.html#id5"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a> <code class="docutils literal notranslate"><span class="pre">dev</span></code> 옵션과 <span class="target" id="index-2"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONDEVMODE"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONDEVMODE</span></code></a> 환경 변수.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>이전 항목</h4>
+  <p class="topless"><a href="othergui.html"
+                        title="이전 장">기타 그래픽 사용자 인터페이스 패키지</a></p>
+  <h4>다음 항목</h4>
+  <p class="topless"><a href="typing.html"
+                        title="다음 장"><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code> — Support for type hints</a></p>
+  <div role="note" aria-label="source link">
+    <h3>현재 문서</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">버그 보고하기</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/3.8/Doc/library/development.rst"
+            rel="nofollow">소스 보기
+        </a>
+      </li>
+    </ul>
+  </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>탐색</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="전체 색인"
+             >색인</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 모듈 목록"
+             >모듈</a> |</li>
+        <li class="right" >
+          <a href="typing.html" title="typing — Support for type hints"
+             >다음</a> |</li>
+        <li class="right" >
+          <a href="othergui.html" title="기타 그래픽 사용자 인터페이스 패키지"
+             >이전</a> |</li>
+
+    <li><img src="../_static/py.png" alt=""
+             style="vertical-align: middle; margin-top: -1px"/></li>
+    <li><a href="https://www.python.org/">Python</a> &#187;</li>
+    
+
+    <li>
+      <span class="language_switcher_placeholder">ko</span>
+      <span class="version_switcher_placeholder">3.8.1</span>
+      <a href="../index.html">설명서 </a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >파이썬 표준 라이브러리</a> &#187;</li>
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="빠른 검색" type="text" name="q" />
+          <input type="submit" value="이동" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">저작권</a> 2001-2020, Python Software Foundation.
+    <br />
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br />
+    <br />
+
+    최종 업데이트: 2월 08, 2020
+    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    <br />
+
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 2.3.1.
+    </div>
+
+  </body>
+</html>
