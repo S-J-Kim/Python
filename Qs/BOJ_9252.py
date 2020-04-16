@@ -1,7 +1,5 @@
 A = list(input())
 B = list(input())
-C = []
-
 
 a, b = len(A), len(B)
 
