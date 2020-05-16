@@ -17,7 +17,7 @@ def merge(low, mid, high):
 
     if i > mid:
         for i in range(j, high + 1):
-            tmp[k] = li[j]
+            tmp[k] = li[i]
             k += 1
         
     else:
